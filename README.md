@@ -45,3 +45,40 @@ And finally, run it:
 ./Hadronizer <LHE file> <HepMC output>
 ```
 LHE file can either be .lhe and also .gz if you configured pythia with the --with-gzip flag.
+
+#DELPHES!
+
+## Instructions
+
+First, install DELPHES ( https://cp3.irmp.ucl.ac.be/projects/delphes/wiki/WorkBook/QuickTour)
+
+```
+wget http://cp3.irmp.ucl.ac.be/downloads/Delphes-3.2.0.tar.gz
+tar -zxf Delphes-3.2.0.tar.gz
+
+cd Delphes-3.2.0
+make -j 4
+```
+
+Run on HepMC output of Hadronizer with CMS card:
+
+```
+./DelphesHepMC cards/delphes_card_CMS.tcl output.root input.hepmc
+```
+
+#Hadronizer+DELPHES Combo for batch
+
+File batch_HadronizeAndDELPHES.sh is a script that can be run on batch (with CMSSW). It has some parameters that can be adjusted:
+```
+hadro= location of the hadronizer executable
+inputLHE= LHE files you produced
+sname= name of the sample you produced
+outHepMC= output location of the hadronizer
+delphesdir= directory where you have the DELPHES executables
+outDelphes= output location of DELPHES
+```
+
+For running on lxbatch, you don't need to change **hadro and outHepMC**. It will automatically put the HepMC files on your /tmp/USER/ directory (HepMC files are very large and won't be used for anything else).  
+
+If you're running on CMS lxplus, you can access my public directory and use my pre-compiled Hadronizer, so you don't need the #Hadronizer step. My pre-compiled hadronizer is the default value on the batch file.
+
