@@ -82,3 +82,11 @@ For running on lxbatch, you don't need to change **hadro and outHepMC**. It will
 
 If you're running on CMS lxplus, you can access my public directory and use my pre-compiled Hadronizer, so you don't need the #Hadronizer step. My pre-compiled hadronizer is the default value on the batch file.
 
+## Submit to lxbatch
+
+Just a reminder: change hadJob to have different job names for different samples you're producing!
+
+```
+bsub -q 8nh -J hadJob < batch_HadronizeAndDELPHES.sh
+```
+
