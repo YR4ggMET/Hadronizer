@@ -97,9 +97,9 @@ int main(int argc, char **argv) {
  // Open a file on which LHEF events should be stored, and write header.
 
  // Begin event loop; generate until none left in input file.
-  for (int iEvent = 0; iEvent < 1; ++iEvent) {
+//  for (int iEvent = 0; iEvent < 1; ++iEvent) {
 
-// for (int iEvent = 0; ; ++iEvent) {
+ for (int iEvent = 0; ; ++iEvent) {
 
   if (!(iEvent%500)) std::cout<<" ievent = " << iEvent << std::endl;
 
