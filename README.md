@@ -44,3 +44,4 @@ And finally, run it:
 ```
 ./Hadronizer <LHE file> <HepMC output>
 ```
+LHE file can either be .lhe and also .gz if you configured pythia with the --with-gzip flag.
